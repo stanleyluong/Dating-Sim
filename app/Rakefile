@@ -1,0 +1,18 @@
+puts 'rakefile'
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
+
+desc 'starts a console'
+task :console do
+  Pry.start
+end
+
+# puts API.pickupline
+#puts API2.joke
+
+desc 'start game'
+task :run do
+  game = Game.new
+  game.walk_into_a_bar
+end
+
